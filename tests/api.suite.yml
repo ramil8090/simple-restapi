@@ -1,0 +1,9 @@
+actor: ApiGuy
+modules:
+    enabled:
+        - \Helper\Api
+        - PhpBrowser:
+            url: http://restapp.local/
+        - REST:
+            url: http://restapp.local/
+            depends: PhpBrowser

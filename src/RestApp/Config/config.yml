@@ -1,0 +1,26 @@
+production:
+    db:
+        dsn: mysql:host=localhost;dbname=airbnb;charset=utf8
+        username: airbnb
+        password: zHHMStefgzrnz7zQ
+    routes:
+        objects/create: objects/create
+        objects/update/([0-9]+): objects/update
+        objects/delete/([0-9]+): objects/delete
+        objects/list: objects/list
+        objects/list/page/([0-9]+)/perpage/([0-9]+): objects/list
+        objects/list/filter/([a-z\_]+)/(equal|notequal|like|notlike)/([a-z0-9\|]+): objects/filter
+        objects/list/filter/([a-z\_]+)/(equal|notequal|like|notlike)/([a-z0-9]+)/page/([0-9]+): /objects/filter
+        objects/list/filter/([a-z\_]+)/(equal|notequal|like|notlike)/([a-z0-9]+)/page/([0-9]+)/perpage/([0-9]+): /objects/filter
+        objects/list/filter/([a-z\_]+)/(equal|notequal|like|notlike)/([a-z0-9]+)/page/([0-9]+)/perpage/([0-9]+)/orderby/(-?[a-z\_]+): /objects/filter
+        objects/view/([0-9]+): objects/view
+        user/login: user/login
+    acl:
+        objects:
+            guest: list, view, filter
+            user: admin, create, update, delete
+        user:
+            guest: loginbasic
+        nofound:
+            guest: index
+    secretKey: SomeSecretKeyForJsonWebTokenNotImplementedForNow
