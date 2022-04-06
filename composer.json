@@ -15,7 +15,7 @@
     "require": {
         "php": ">=7.0.0",
         "slim/pdo": "~1.9",
-        "guzzlehttp/psr7": "1.4.2",
+        "guzzlehttp/psr7": "1.8.4",
         "squire/yaml": "3.3.2",
         "vespula/log": "^0.2.7",
         "firebase/php-jwt": "5.0.0"
